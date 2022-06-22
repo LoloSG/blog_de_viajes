@@ -1,0 +1,20 @@
+.hero{
+    background-color: rgb(254, 187, 187);
+    height: 200px;
+    width: 100%;
+    padding-top: 25px;
+
+}
+
+.logo img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.logo{
+   margin: 0 auto;
+    width: 500px;
+    height: 500px;
+}
+
