@@ -27,7 +27,7 @@ div .text p{
 
 .form-group{
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .form-control{
@@ -48,12 +48,17 @@ select{
     border: 2px solid rgb(123, 123, 123);
 }
 
-input.ng-invalid.ng-touched{
+.ng-invalid.ng-touched{
     border-color: tomato;
 }
 
 .error{
     color: tomato;
+    font-size: 10px;
+}
+
+.ng-valid.ng-touched{
+    border-color: lightgreen;
 }
 
 figure{

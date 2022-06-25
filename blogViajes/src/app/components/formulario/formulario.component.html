@@ -3,8 +3,17 @@
 
         <div class="form-group">
             <label for="title" class="form-label">Título</label>
-            <input type="text" class="form-control" id="title" formControlName="title">
-            <!-- <p class="error" *ngIf="checkValidator('title', 'required')">Debes seleccionar un título</p> -->
+            <input type="text" class="form-control" id="title" formControlName="title"
+                placeholder="Introduce un título sobre tu viaje">
+            <p class="error" *ngIf="nuevoPost.get('title')?.hasError('required') && nuevoPost.get('tittle')?.touched">
+                Debes añadir un título</p>
+        </div>
+
+        <div class="form-group">
+            <label for="date" class="form-label">Fecha del viaje</label>
+
+            <input type="date" class="form-control" id="date" formControlName="date" value="2022-07-22" min="2018-01-01"
+                max="2030-12-31">
         </div>
 
 
@@ -15,16 +24,20 @@
             </textarea>
                 <p>{{text.value.length}} / 800</p>
             </div>
-            <!-- <p class="error" *ngIf="checkValidator('text', 'minlength')">
-            La descripción debe tener al menos 100 caracteres</p> -->
+            <p class="error"
+                *ngIf="nuevoPost.get('description')?.hasError('required', 'minlength')&&nuevoPost.get('description')?.touched">
+                La descripción debe tener al menos 120 caracteres</p>
 
         </div>
 
 
         <div class="form-group">
             <label for="author" class="form-label">Autoría</label>
-            <input type="text" class="form-control" id="author" formControlName="author">
-            <!-- <p class="error" *ngIf="checkValidator('author', 'required')">Debes añadir un nombre para la autoría</p> -->
+            <input type="text" class="form-control" id="author" formControlName="author"
+                placeholder="Introduce tu nombre">
+            <p class="error"
+                *ngIf="nuevoPost.get('author')?.hasError('required', 'minlength')&&nuevoPost.get('author')?.touched">
+                Debes añadir un nombre para la autoría</p>
         </div>
 
 
@@ -32,13 +45,14 @@
             <label for="image" class="form-label">Imagen</label>
             <input type="text" class="form-control" id="image" formControlName="image"
                 placeholder="introduce la URL de la imagen">
-            <!-- <p class="error" *ngIf="checkValidator('image', 'pattern')">Invalid url</p> -->
+            <p class="error"
+                *ngIf="nuevoPost.get('image')?.hasError('required', 'pattern')&&nuevoPost.get('image')?.touched">
+                url no válida</p>
 
         </div>
 
 
         <div class="form-group">
-            <!-- <label for="category" class="form-label">Categoría</label> -->
             <select id="category" formControlName="category">
                 <option value="" selected disabled>Selecciona un continente</option>
                 <option value="África">África</option>
@@ -51,7 +65,7 @@
 
         </div>
 
-        <input type="submit" value="Enviar" class="btn btn-info btn-block btn-dark mt-5" [disabled]="">
+        <input type="submit" value="Enviar" class="btn btn-info btn-block btn-dark mt-5" [disabled]="!nuevoPost.valid">
 
 
     </form>

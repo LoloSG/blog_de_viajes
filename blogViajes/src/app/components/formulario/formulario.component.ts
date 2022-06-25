@@ -19,8 +19,12 @@ export class FormularioComponent implements OnInit {
         Validators.required,
         Validators.minLength(120),
       ]),
+      date: new FormControl('', [
+        Validators.required,
+      ]),
       author: new FormControl('', [
-        Validators.required
+        Validators.required,
+        Validators.minLength(3)
       ]),
       image: new FormControl('', [
         Validators.required,
@@ -36,11 +40,9 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  checkValidator() {
-
-  }
 
   getDataForm() {
+    console.log(this.nuevoPost.value)
 
   }
 
