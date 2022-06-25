@@ -54,6 +54,7 @@ select{
 
 .error{
     color: tomato;
+    margin-top: 3px;
     font-size: 10px;
 }
 

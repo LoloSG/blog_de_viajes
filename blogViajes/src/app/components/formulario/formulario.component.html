@@ -5,7 +5,7 @@
             <label for="title" class="form-label">Título</label>
             <input type="text" class="form-control" id="title" formControlName="title"
                 placeholder="Introduce un título sobre tu viaje">
-            <p class="error" *ngIf="nuevoPost.get('title')?.hasError('required') && nuevoPost.get('tittle')?.touched">
+            <p class="error" *ngIf="nuevoPost.get('title')?.hasError('required') && nuevoPost.get('title')?.touched">
                 Debes añadir un título</p>
         </div>
 
@@ -25,7 +25,10 @@
                 <p>{{text.value.length}} / 800</p>
             </div>
             <p class="error"
-                *ngIf="nuevoPost.get('description')?.hasError('required', 'minlength')&&nuevoPost.get('description')?.touched">
+                *ngIf="nuevoPost.get('description')?.hasError('required')&&nuevoPost.get('description')?.touched">
+                Debes escribir una descripción</p>
+            <p class="error"
+                *ngIf="nuevoPost.get('description')?.hasError('minlength')&&nuevoPost.get('description')?.touched">
                 La descripción debe tener al menos 120 caracteres</p>
 
         </div>
@@ -35,9 +38,10 @@
             <label for="author" class="form-label">Autoría</label>
             <input type="text" class="form-control" id="author" formControlName="author"
                 placeholder="Introduce tu nombre">
-            <p class="error"
-                *ngIf="nuevoPost.get('author')?.hasError('required', 'minlength')&&nuevoPost.get('author')?.touched">
+            <p class="error" *ngIf="nuevoPost.get('author')?.hasError('required')&&nuevoPost.get('author')?.touched">
                 Debes añadir un nombre para la autoría</p>
+            <p class="error" *ngIf="nuevoPost.get('author')?.hasError('minlength')&&nuevoPost.get('author')?.touched">
+                El nombre debe tener al menos tres caracteres</p>
         </div>
 
 
@@ -45,8 +49,9 @@
             <label for="image" class="form-label">Imagen</label>
             <input type="text" class="form-control" id="image" formControlName="image"
                 placeholder="introduce la URL de la imagen">
-            <p class="error"
-                *ngIf="nuevoPost.get('image')?.hasError('required', 'pattern')&&nuevoPost.get('image')?.touched">
+            <p class="error" *ngIf="nuevoPost.get('image')?.hasError('required')&&nuevoPost.get('image')?.touched">
+                Debes añadir una imagen</p>
+            <p class="error" *ngIf="nuevoPost.get('image')?.hasError('pattern')&&nuevoPost.get('image')?.touched">
                 url no válida</p>
 
         </div>
