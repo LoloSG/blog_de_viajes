@@ -1,1 +1,82 @@
-<p>formulario works!</p>
+<div class="container">
+    <form [formGroup]="nuevoPost" (ngSubmit)="getDataForm()">
+
+        <div class="form-group">
+            <label for="title" class="form-label">Título</label>
+            <input type="text" class="form-control" id="title" formControlName="title"
+                placeholder="Introduce un título sobre tu viaje">
+            <p class="error" *ngIf="nuevoPost.get('title')?.hasError('required') && nuevoPost.get('title')?.touched">
+                Debes añadir un título</p>
+        </div>
+
+        <div class="form-group">
+            <label for="date" class="form-label">Fecha del viaje</label>
+
+            <input type="date" class="form-control" id="date" formControlName="date" value="2022-07-22" min="2018-01-01"
+                max="2030-12-31">
+        </div>
+
+
+        <div class="form-group">
+            <label for="description" class="form-label">Descripción</label>
+            <div class="text">
+                <textarea class="form-control" formControlName="description" id="description" #text maxlength="700">
+            </textarea>
+                <p>{{text.value.length}} / 800</p>
+            </div>
+            <p class="error"
+                *ngIf="nuevoPost.get('description')?.hasError('required')&&nuevoPost.get('description')?.touched">
+                Debes escribir una descripción</p>
+            <p class="error"
+                *ngIf="nuevoPost.get('description')?.hasError('minlength')&&nuevoPost.get('description')?.touched">
+                La descripción debe tener al menos 120 caracteres</p>
+
+        </div>
+
+
+        <div class="form-group">
+            <label for="author" class="form-label">Autoría</label>
+            <input type="text" class="form-control" id="author" formControlName="author"
+                placeholder="Introduce tu nombre">
+            <p class="error" *ngIf="nuevoPost.get('author')?.hasError('required')&&nuevoPost.get('author')?.touched">
+                Debes añadir un nombre para la autoría</p>
+            <p class="error" *ngIf="nuevoPost.get('author')?.hasError('minlength')&&nuevoPost.get('author')?.touched">
+                El nombre debe tener al menos tres caracteres</p>
+        </div>
+
+
+        <div class="form-group">
+            <label for="image" class="form-label">Imagen</label>
+            <input type="text" class="form-control" id="image" formControlName="image"
+                placeholder="introduce la URL de la imagen">
+            <p class="error" *ngIf="nuevoPost.get('image')?.hasError('required')&&nuevoPost.get('image')?.touched">
+                Debes añadir una imagen</p>
+            <p class="error" *ngIf="nuevoPost.get('image')?.hasError('pattern')&&nuevoPost.get('image')?.touched">
+                url no válida</p>
+
+        </div>
+
+
+        <div class="form-group">
+            <select id="category" formControlName="category">
+                <option value="" selected disabled>Selecciona un continente</option>
+                <option value="África">África</option>
+                <option value="América">América</option>
+                <option value="Asia">Asia</option>
+                <option value="Europa">Europa</option>
+                <option value="Oceanía">Oceanía</option>
+            </select>
+
+
+        </div>
+
+        <input type="submit" value="Enviar" class="btn btn-info btn-block btn-dark mt-5" [disabled]="!nuevoPost.valid">
+
+
+    </form>
+
+    <figure>
+        <img src="https://img.freepik.com/vector-gratis/pintura-acuarela-monton-bolsas-equipaje-vintage_534606-52.jpg"
+            alt="">
+    </figure>
+</div>
