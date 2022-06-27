@@ -8,6 +8,7 @@ import { PostBlog } from '../interfaces/post.interface';
 export class BlogsService {
 
   private arrPosts: PostBlog[] = []
+  private id: number = 4;
   constructor() {
     this.arrPosts = POSTS
 
@@ -20,5 +21,12 @@ export class BlogsService {
 
   getById(pId: number): PostBlog | any {
     return this.arrPosts.find(post => post.id === pId)
+  }
+
+  addPost(pForm: any): boolean {
+    pForm.id = this.id;
+    let posicion = this.arrPosts.push(pForm);
+    this.id++
+    return (posicion) ? true : false;
   }
 }
