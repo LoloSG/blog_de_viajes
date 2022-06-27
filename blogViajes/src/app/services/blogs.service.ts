@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { POSTS } from '../db/productos.db'
+import { POSTS } from '../db/posts.db'
 import { PostBlog } from '../interfaces/post.interface';
 
 @Injectable({
