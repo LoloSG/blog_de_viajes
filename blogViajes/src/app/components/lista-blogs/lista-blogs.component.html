@@ -1,1 +1,18 @@
-<p>lista-blogs works!</p>
+<div class="container">
+    <section class="row">
+        <article class="col-12 col-md-6 col-lg-4" *ngFor="let post of posts">
+            <div class="single-blog-item">
+                <figure class="blog-thumnail">
+                    <img [src]="post.imagen" alt="blog-img">
+                </figure>
+                <div class="blog-content">
+                    <h4>{{post.titulo}}</h4><span><i class="fas fa-tag"></i>{{post.categoria}}</span>
+                    <p class="mt-1">{{post.texto}}</p>
+                    <a href="" class="more-btn btn-dark">View More</a>
+                </div>
+                <span class="blog-date">{{post.fecha}}</span>
+                <span class="blog-autor">{{post.autor}} </span>
+            </div>
+        </article>
+    </section>
+</div>
