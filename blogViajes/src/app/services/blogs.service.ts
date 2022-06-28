@@ -23,9 +23,10 @@ export class BlogsService {
     return this.arrPosts.find(post => post.id === pId)
   }
 
-  addPost(pForm: any): boolean {
+  addPost(pForm: any): any {
     pForm.id = this.id;
     let posicion = this.arrPosts.push(pForm);
+    // this.arrPosts.push(pForm);
     this.id++
     return (posicion) ? true : false;
   }

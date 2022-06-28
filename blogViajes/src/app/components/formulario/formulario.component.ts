@@ -17,25 +17,25 @@ export class FormularioComponent implements OnInit {
     private router: Router
   ) {
     this.nuevoPost = new FormGroup({
-      title: new FormControl('', [
+      titulo: new FormControl('', [
         Validators.required
       ]),
-      description: new FormControl('', [
+      texto: new FormControl('', [
         Validators.required,
         Validators.minLength(120),
       ]),
-      date: new FormControl('', [
+      fecha: new FormControl('', [
         Validators.required,
       ]),
-      author: new FormControl('', [
+      autor: new FormControl('', [
         Validators.required,
         Validators.minLength(3)
       ]),
-      image: new FormControl('', [
+      imagen: new FormControl('', [
         Validators.required,
         Validators.pattern(/(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/)
       ]),
-      category: new FormControl('', [
+      categoria: new FormControl('', [
         Validators.required
       ]),
 

@@ -2,63 +2,61 @@
     <form [formGroup]="nuevoPost" (ngSubmit)="getDataForm()">
 
         <div class="form-group">
-            <label for="title" class="form-label">Título</label>
-            <input type="text" class="form-control" id="title" formControlName="title"
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" class="form-control" id="titulo" formControlName="titulo"
                 placeholder="Introduce un título sobre tu viaje">
-            <p class="error" *ngIf="nuevoPost.get('title')?.hasError('required') && nuevoPost.get('title')?.touched">
+            <p class="error" *ngIf="nuevoPost.get('titulo')?.hasError('required') && nuevoPost.get('titulo')?.touched">
                 Debes añadir un título</p>
         </div>
 
         <div class="form-group">
-            <label for="date" class="form-label">Fecha del viaje</label>
+            <label for="fecha" class="form-label">Fecha del viaje</label>
 
-            <input type="date" class="form-control" id="date" formControlName="date" value="2022-07-22" min="2018-01-01"
-                max="2030-12-31">
+            <input type="date" class="form-control" id="fecha" formControlName="fecha" value="2022-07-22"
+                min="2018-01-01" max="2030-12-31">
         </div>
 
 
         <div class="form-group">
-            <label for="description" class="form-label">Descripción</label>
+            <label for="texto" class="form-label">Descripción</label>
             <div class="text">
-                <textarea class="form-control" formControlName="description" id="description" #text maxlength="700">
+                <textarea class="form-control" formControlName="texto" id="texto" #text maxlength="700">
             </textarea>
                 <p>{{text.value.length}} / 800</p>
             </div>
-            <p class="error"
-                *ngIf="nuevoPost.get('description')?.hasError('required')&&nuevoPost.get('description')?.touched">
+            <p class="error" *ngIf="nuevoPost.get('texto')?.hasError('required')&&nuevoPost.get('texto')?.touched">
                 Debes escribir una descripción</p>
-            <p class="error"
-                *ngIf="nuevoPost.get('description')?.hasError('minlength')&&nuevoPost.get('description')?.touched">
+            <p class="error" *ngIf="nuevoPost.get('texto')?.hasError('minlength')&&nuevoPost.get('texto')?.touched">
                 La descripción debe tener al menos 120 caracteres</p>
 
         </div>
 
 
         <div class="form-group">
-            <label for="author" class="form-label">Autoría</label>
-            <input type="text" class="form-control" id="author" formControlName="author"
+            <label for="autor" class="form-label">Autoría</label>
+            <input type="text" class="form-control" id="autor" formControlName="autor"
                 placeholder="Introduce tu nombre">
-            <p class="error" *ngIf="nuevoPost.get('author')?.hasError('required')&&nuevoPost.get('author')?.touched">
+            <p class="error" *ngIf="nuevoPost.get('autor')?.hasError('required')&&nuevoPost.get('autor')?.touched">
                 Debes añadir un nombre para la autoría</p>
-            <p class="error" *ngIf="nuevoPost.get('author')?.hasError('minlength')&&nuevoPost.get('author')?.touched">
+            <p class="error" *ngIf="nuevoPost.get('autor')?.hasError('minlength')&&nuevoPost.get('autor')?.touched">
                 El nombre debe tener al menos tres caracteres</p>
         </div>
 
 
         <div class="form-group">
-            <label for="image" class="form-label">Imagen</label>
-            <input type="text" class="form-control" id="image" formControlName="image"
-                placeholder="introduce la URL de la imagen">
-            <p class="error" *ngIf="nuevoPost.get('image')?.hasError('required')&&nuevoPost.get('image')?.touched">
+            <label for="imagen" class="form-label">imagen</label>
+            <input type="text" class="form-control" id="imagen" formControlName="imagen"
+                placeholder="introduce la URL de la imagenn">
+            <p class="error" *ngIf="nuevoPost.get('imagen')?.hasError('required')&&nuevoPost.get('imagen')?.touched">
                 Debes añadir una imagen</p>
-            <p class="error" *ngIf="nuevoPost.get('image')?.hasError('pattern')&&nuevoPost.get('image')?.touched">
+            <p class="error" *ngIf="nuevoPost.get('imagen')?.hasError('pattern')&&nuevoPost.get('imagen')?.touched">
                 url no válida</p>
 
         </div>
 
 
         <div class="form-group">
-            <select id="category" formControlName="category">
+            <select id="categoria" formControlName="categoria">
                 <option value="" selected disabled>Selecciona un continente</option>
                 <option value="África">África</option>
                 <option value="América">América</option>
