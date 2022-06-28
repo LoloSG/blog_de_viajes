@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Error404Component } from './components/error404/error404.component';
+import { RecortarTextoPipe } from './pipes/recortar-texto.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Error404Component } from './components/error404/error404.component';
     ListaBlogsComponent,
     HeaderComponent,
     FooterComponent,
-    Error404Component
+    Error404Component,
+    RecortarTextoPipe
   ],
   imports: [
     BrowserModule,

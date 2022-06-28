@@ -7,7 +7,7 @@
                 </figure>
                 <div class="blog-content">
                     <h4>{{post.titulo}}</h4><span><i class="fas fa-tag"></i>{{post.categoria}}</span>
-                    <p class="mt-1">{{post.texto}}</p>
+                    <p class="mt-1">{{post.texto | recortarTexto}}</p>
                     <a href="" class="more-btn btn-dark">Leer más</a>
                 </div>
                 <span class="blog-date">{{post.fecha}}</span>

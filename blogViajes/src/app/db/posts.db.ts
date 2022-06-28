@@ -28,6 +28,6 @@ export const POSTS: PostBlog[] = [
         imagen: 'https://miviaje.com/wp-content/uploads/2019/04/mezquita-sultan-hassan-cairo.jpg?auto=webp&quality=45&width=768&crop=16:9,smart,safe',
         fecha: '04/06/2022',
         categoria: 'África'
-    }
+    },
 
 ]
