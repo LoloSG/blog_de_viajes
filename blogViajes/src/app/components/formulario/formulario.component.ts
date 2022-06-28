@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { BlogsService } from 'src/app/services/blogs.service';
 
 @Component({
   selector: 'app-formulario',
@@ -10,27 +12,30 @@ export class FormularioComponent implements OnInit {
 
   nuevoPost: FormGroup;
 
-  constructor() {
+  constructor(
+    private blogsServices: BlogsService,
+    private router: Router
+  ) {
     this.nuevoPost = new FormGroup({
-      title: new FormControl('', [
+      titulo: new FormControl('', [
         Validators.required
       ]),
-      description: new FormControl('', [
+      texto: new FormControl('', [
         Validators.required,
         Validators.minLength(120),
       ]),
-      date: new FormControl('', [
+      fecha: new FormControl('', [
         Validators.required,
       ]),
-      author: new FormControl('', [
+      autor: new FormControl('', [
         Validators.required,
         Validators.minLength(3)
       ]),
-      image: new FormControl('', [
+      imagen: new FormControl('', [
         Validators.required,
         Validators.pattern(/(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?/)
       ]),
-      category: new FormControl('', [
+      categoria: new FormControl('', [
         Validators.required
       ]),
 
@@ -42,7 +47,12 @@ export class FormularioComponent implements OnInit {
 
 
   getDataForm() {
-    console.log(this.nuevoPost.value)
+    let peticion = this.blogsServices.addPost(this.nuevoPost.value)
+    if (peticion) {
+      this.router.navigate(['/home'])
+    } else {
+      alert('el post no se ha podido enviar')
+    }
 
   }
 
