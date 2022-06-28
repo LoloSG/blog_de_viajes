@@ -22,12 +22,12 @@
             <div class="text">
                 <textarea class="form-control" formControlName="texto" id="texto" #text maxlength="700">
             </textarea>
-                <p>{{text.value.length}} / 800</p>
+                <p>{{text.value.length}} / 1200</p>
             </div>
             <p class="error" *ngIf="nuevoPost.get('texto')?.hasError('required')&&nuevoPost.get('texto')?.touched">
-                Debes escribir una descripción</p>
+                Debes añadir una descripción</p>
             <p class="error" *ngIf="nuevoPost.get('texto')?.hasError('minlength')&&nuevoPost.get('texto')?.touched">
-                La descripción debe tener al menos 120 caracteres</p>
+                La descripción debe contener al menos 120 caracteres</p>
 
         </div>
 
@@ -39,7 +39,7 @@
             <p class="error" *ngIf="nuevoPost.get('autor')?.hasError('required')&&nuevoPost.get('autor')?.touched">
                 Debes añadir un nombre para la autoría</p>
             <p class="error" *ngIf="nuevoPost.get('autor')?.hasError('minlength')&&nuevoPost.get('autor')?.touched">
-                El nombre debe tener al menos tres caracteres</p>
+                El nombre debe contener al menos tres caracteres</p>
         </div>
 
 

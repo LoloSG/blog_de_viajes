@@ -65,3 +65,9 @@ figure{
   color: #f1f1f1;
   
 }
+
+.more-btn:hover{
+  background-color:rgb(243, 214, 214);
+  color: black;
+  transition: 0.70s ;
+}
