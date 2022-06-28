@@ -74,3 +74,33 @@ img{
     height: auto;
 }
 
+
+/* mediaquerys */
+
+@media(max-width:425px){
+    .container{
+        display: block;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    
+} 
+
+@media(max-width:1004px){
+    .container{
+        display: block;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    
+} 
+
+
+
+
