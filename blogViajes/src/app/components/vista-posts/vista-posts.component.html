@@ -1,0 +1,18 @@
+<section class="container card p-5 mt-3">
+
+    <h2>{{post.titulo}}</h2>
+    <p class="blog-autor"> De: {{post.autor}} | {{post.fecha}} <span><i class="fas fa-tag"></i>{{post.categoria}}</span>
+    </p>
+
+
+
+    <div>
+        <figure>
+            <img [src]="post.imagen" [alt]="post.titulo">
+
+        </figure>
+        <p>{{post.texto}}</p>
+    </div>
+
+
+</section>
