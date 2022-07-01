@@ -1,4 +1,12 @@
 <div class="container">
+
+    <select name="" class="form-select mt-5 mt-md-2" (change)=" getCategory($event)">
+
+        <option value="">Selecciona una categoría</option>
+        <option *ngFor="let category of arrCategories" [value]="category.id">{{category.titulo}}</option>
+    </select>
+
+
     <section class="row">
         <article class="col-12 col-md-6 col-lg-4" *ngFor="let post of posts">
             <div class="single-blog-item">

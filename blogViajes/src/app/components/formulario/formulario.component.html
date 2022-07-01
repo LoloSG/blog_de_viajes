@@ -57,12 +57,8 @@
 
         <div class="form-group">
             <select id="categoria" formControlName="categoria">
-                <option value="" selected disabled>Selecciona un continente</option>
-                <option value="África">África</option>
-                <option value="América">América</option>
-                <option value="Asia">Asia</option>
-                <option value="Europa">Europa</option>
-                <option value="Oceanía">Oceanía</option>
+                <option value="">Selecciona una categoría</option>
+                <option *ngFor="let category of arrCategories" [value]=category.id>{{category.titulo}}</option>
             </select>
 
 

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/interfaces/category';
 import { BlogsService } from 'src/app/services/blogs.service';
+import { CategoriesService } from 'src/app/services/categories.service';
 
 @Component({
   selector: 'app-formulario',
@@ -12,9 +14,11 @@ export class FormularioComponent implements OnInit {
 
   nuevoPost: FormGroup;
 
+  arrCategories: Category[] = []
   constructor(
     private blogsServices: BlogsService,
-    private router: Router
+    private router: Router,
+    private categoriesServices: CategoriesService
   ) {
     this.nuevoPost = new FormGroup({
       titulo: new FormControl('', [
@@ -43,6 +47,7 @@ export class FormularioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.arrCategories = this.categoriesServices.getAll()
   }
 
 
@@ -55,5 +60,7 @@ export class FormularioComponent implements OnInit {
     }
 
   }
+
+
 
 }

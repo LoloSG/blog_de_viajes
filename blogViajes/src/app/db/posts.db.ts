@@ -9,7 +9,7 @@ export const POSTS: PostBlog[] = [
         autor: 'Mary Popper',
         imagen: 'https://miviaje.com/wp-content/uploads/2020/07/cerro-monserrate-cima-bogota-768x532.jpg?auto=webp&quality=45&width=1920&crop=16:9,smart,safe',
         fecha: '17/03/2021',
-        categoria: 'América'
+        categoria: 4
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ export const POSTS: PostBlog[] = [
         autor: 'Mary Popper',
         imagen: 'https://miviaje.com/wp-content/uploads/2020/05/golden-week-japon-768x512.jpg?auto=webp&quality=45&width=1920&crop=16:9,smart,safe',
         fecha: '29/04/2020',
-        categoria: 'Asia'
+        categoria: 3
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ export const POSTS: PostBlog[] = [
         autor: 'Mary Popper',
         imagen: 'https://miviaje.com/wp-content/uploads/2019/04/mezquita-sultan-hassan-cairo.jpg?auto=webp&quality=45&width=768&crop=16:9,smart,safe',
         fecha: '04/06/2022',
-        categoria: 'África'
+        categoria: 2
     },
 
 ]

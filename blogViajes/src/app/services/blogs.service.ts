@@ -30,4 +30,11 @@ export class BlogsService {
     this.id++
     return (posicion) ? true : false;
   }
+
+  filterByCategory(pIdCategory: number): PostBlog[] {
+    if (pIdCategory !== 0) {
+      return this.arrPosts.filter(post => post.categoria === pIdCategory)
+    }
+    return this.arrPosts
+  }
 }

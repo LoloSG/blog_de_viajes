@@ -5,5 +5,5 @@ export interface PostBlog {
     autor: string;
     imagen: string;
     fecha: string;
-    categoria: string;
+    categoria: number;
 }
