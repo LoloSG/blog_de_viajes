@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Category } from 'src/app/interfaces/category';
 import { PostBlog } from 'src/app/interfaces/post.interface';
 import { BlogsService } from 'src/app/services/blogs.service';
+import { CategoriesService } from 'src/app/services/categories.service';
 
 
 @Component({
@@ -12,9 +14,11 @@ import { BlogsService } from 'src/app/services/blogs.service';
 export class VistaPostsComponent implements OnInit {
 
   post: PostBlog | any;
+  arrCategories: Category[] = [];
   constructor(
     private blogsService: BlogsService,
     private activatedRoute: ActivatedRoute,
+    private categoriesService: CategoriesService
 
   ) { }
 
@@ -26,6 +30,11 @@ export class VistaPostsComponent implements OnInit {
     })
 
 
+  }
+
+  printCategory(pIdCategory: number): string {
+    let categoria: Category = this.categoriesService.getById(pIdCategory);
+    return categoria.titulo
   }
 
 

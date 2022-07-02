@@ -1,7 +1,9 @@
+
 img {
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
+
 figure{
     height: 300px;;
 }
@@ -72,6 +74,22 @@ figure{
   
 }
 
+.vacio{
+  display: flex; 
+  width: 100%;
+}
+
+.vacio figure{
+  width: 30%;
+  height: 350px;
+  margin-left: 200px;
+}
+
+.vacio figure img{
+  width: 100%;
+  height: 100%;
+}
+
 .more-btn:hover{
   background-color:rgb(243, 214, 214);
   color: black;
@@ -85,8 +103,21 @@ figure{
     width: 100%;
   }
 
-  
+  .vacio{
+    display: block;
+}
+
+.vacio h3{
+    width: 100%;
+}
+
+.vacio figure{
+    width: 100%;
+    margin-left: 0;
+ 
 } 
+
+}
 
 @media(max-width:1004px){
   .form-select{
@@ -94,5 +125,22 @@ figure{
     width: 100%;
   }
 
+  .vacio{
+    display: block;
+}
+
+.vacio h3{
+    width: 100%;
+}
+
+.vacio figure{
+    width: 100%;
+    margin-left: 0;
+
+   
+}
+
+
   
 } 
+

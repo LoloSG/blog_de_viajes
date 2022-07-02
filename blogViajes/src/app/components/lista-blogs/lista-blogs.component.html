@@ -14,7 +14,7 @@
                     <img [src]="post.imagen" alt="blog-img">
                 </figure>
                 <div class="blog-content">
-                    <h4>{{post.titulo}}</h4><span><i class="fas fa-tag"></i>{{post.categoria}}</span>
+                    <h4>{{post.titulo}}</h4><span><i class="fas fa-tag"></i>{{printCategory(post.categoria)}}</span>
                     <p class="mt-1">{{post.texto | recortarTexto}}</p>
                     <a class="more-btn btn-dark" [routerLink]="['/post', post.id]">Leer más</a>
                 </div>
@@ -23,4 +23,11 @@
             </div>
         </article>
     </section>
+    <div class="vacio mt-5" *ngIf="posts.length === 0">
+        <h3> Aún no hay posts de viajes al continente seleccionado</h3>
+        <figure>
+            <img src="https://img.freepik.com/vector-gratis/icono-vector-avion-papel-doodle-estilo-esquema-avion-papel-color-rosa-avion-origami-simple_253081-1021.jpg?w=2000"
+                alt="">
+        </figure>
+    </div>
 </div>

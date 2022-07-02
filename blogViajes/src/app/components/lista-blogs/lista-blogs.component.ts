@@ -30,4 +30,9 @@ export class ListaBlogsComponent implements OnInit {
     this.posts = this.blogsServices.filterByCategory(idCategory);
   }
 
+  printCategory(pIdCategory: number): string {
+    let categoria: Category = this.categoriesService.getById(pIdCategory);
+    return categoria.titulo
+  }
+
 }
