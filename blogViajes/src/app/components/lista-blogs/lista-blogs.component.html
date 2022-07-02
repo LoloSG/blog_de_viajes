@@ -3,7 +3,7 @@
     <select name="" class="form-select mt-5 mt-md-2" (change)=" getCategory($event)">
 
         <option value="">Selecciona una categoría</option>
-        <option *ngFor="let category of arrCategories" [value]="category.id">{{category.titulo}}</option>
+        <option *ngFor="let category of arrCategories" [value]=category.id>{{category.titulo}}</option>
     </select>
 
 
@@ -14,7 +14,7 @@
                     <img [src]="post.imagen" alt="blog-img">
                 </figure>
                 <div class="blog-content">
-                    <h4>{{post.titulo}}</h4><span><i class="fas fa-tag"></i>{{printCategory(post.categoria)}}</span>
+                    <h4>{{post.titulo}}</h4><span><i class="fas fa-tag"></i>{{post.categoria}}</span>
                     <p class="mt-1">{{post.texto | recortarTexto}}</p>
                     <a class="more-btn btn-dark" [routerLink]="['/post', post.id]">Leer más</a>
                 </div>

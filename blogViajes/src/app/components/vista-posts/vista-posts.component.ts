@@ -27,16 +27,15 @@ export class VistaPostsComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       let id = parseInt(params['id']);
       this.post = this.blogsService.getById(id);
+
     })
 
-
   }
 
-  printCategory(pIdCategory: number): string {
-    let categoria: Category = this.categoriesService.getById(pIdCategory);
-    return categoria.titulo
-  }
-
+  // printCategory(pIdCategory: number): string {
+  //   let categoria: PostBlog = this.categoriesService.getById(pIdCategory);
+  //   return categoria.titulo
+  // }
 
 
 }
